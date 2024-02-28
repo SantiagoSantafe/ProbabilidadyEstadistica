@@ -1,9 +1,8 @@
 ---
-title: "Proyecto Probabilidad y Estadistica primer corte"
+title: "Proyecto Probabilidad y Estadistica Primer Corte"
 output: pdf_document 
 ---
 
-# Proyecto Probabilidad y Estadistica
 ### Realizado por: Andrea Forero, Juan Dimate, Caren Piñeros y Santiago Santafe
 
 ## Introducción
