@@ -4,6 +4,28 @@ output: pdf_document
 ---
 
 # Proyecto Probabilidad y Estadistica
-## Realizado por: Andrea Forero, Juan Dimate, Caren Piñeros y Santiago Santafe
+### Realizado por: Andrea Forero, Juan Dimate, Caren Piñeros y Santiago Santafe
 
-This is my R Markdown document. Start writing your content here.
+## Introducción
+Esta es la parte de Caren
+
+## Objetivos
+Esta también es la parte de Caren
+
+## Justificación
+Esta también es la parte de Caren
+
+## Planteamiento del problema
+No olvide realizar una breve introducción, e indique por qué el problema planteado es de su interés. Presente brevemente un marco teórico que de contexto a la problemática planteada.
+
+## Variables
+incluidas junto con su clasificación y su estadística descriptiva (presente las gráficas y resúmenes descriptivos que considere adecuados y que haya elaborado con R : Santiago
+
+## Resultados
+Juan
+
+## Conclusiones
+Juan
+
+## Bibliografía
+Juan
