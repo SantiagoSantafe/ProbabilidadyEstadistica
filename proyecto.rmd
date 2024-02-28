@@ -1,9 +1,10 @@
 ---
 title: "Proyecto Probabilidad y Estadistica Primer Corte"
-output: pdf_document 
+subtitle: 'Universidad de la Sabana'
+author: "Andrea Forero - Juan Dimate - Caren Piñeros - Santiago Santafe"
+output: rmdformats::downcute
 ---
 
-### Realizado por: Andrea Forero, Juan Dimate, Caren Piñeros y Santiago Santafe
 
 ## Introducción
 Esta es la parte de Caren
@@ -57,5 +58,15 @@ Universidad El Bosque. (s.f.). REVISTAS DE LA UNIVERSIDAD EL BOSQUE. https://rev
  
  relacionMedioTrans_Genero=table(dr$`Genero `,dr$`¿Qué tipo transporte usa?`)
  prop.table(relacionMedioTrans_Genero)
+ 
+ #Relacion entre medio de transporte y genero
+
+barplot(table(dr$`Genero `,dr$`¿Qué tipo transporte usa?`),beside=TRUE,legend.text = TRUE, col=c("pink","lightblue"),main="Medio de transporte por genero",xlab="Genero",ylab="Frecuencia")
+
+#Relacion entre nivel de conformidad y tiempo que tarda
+
+barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE, col=c("pink", "lightblue"),main = "Conformidad por medio de transporte",xlab = "Genero", ylab="Conformidad")
+
+
  
 ```
