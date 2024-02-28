@@ -1,0 +1,9 @@
+---
+title: "Proyecto Probabilidad y Estadistica primer corte"
+output: pdf_document 
+---
+
+# Proyecto Probabilidad y Estadistica
+## Realizado por: Andrea Forero, Juan Dimate, Caren Piñeros y Santiago Santafe
+
+This is my R Markdown document. Start writing your content here.
