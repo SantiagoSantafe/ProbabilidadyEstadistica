@@ -125,7 +125,7 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   theme_minimal()
 
 
-#Relacion entre nivel de conformidad y tiempo que tarda
+#Relacion entre nivel de conformidad y género
 
 barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Genero", ylab="Conformidad")
 
