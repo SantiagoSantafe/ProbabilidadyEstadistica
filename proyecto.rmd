@@ -37,6 +37,11 @@ Los resultados de este estudio proporcionarán información para llevar a cabo l
 
 ##Tablas de frecuencias cruzadas o de contingencia
 Las tablas de frecuencia cruzada o de contingencia, son estructuras utilizadas en estadística para organizar y resumir datos categóricos en términos de frecuencias de ocurrencia. Estas tablas constan de filas y columnas que representa las diferentes categóricas de dos o más variables. Las tablas de contingencia proporcionan una forma sistemática y visualmente comprensible de examinar la distribución conjunta de las categorías y detectar posibles patrones o tendencias en los datos.
+Para crear tabla de frecuencia cruzada
+
+`
+tabla <- xtabs(~ Genero + Edad, data = datos)
+print(tabla)`
 
 ## Variables
 incluidas junto con su clasificación y su estadística descriptiva (presente las gráficas y resúmenes descriptivos que considere adecuados y que haya elaborado con R : Santiago
@@ -44,7 +49,7 @@ incluidas junto con su clasificación y su estadística descriptiva (presente la
 ` dr = read_excel("ENCUESTA MOVILIDAD(1-154).xlsx") `
 La variable dr lee el excel de los datos recopilados en la encuesta
 
-` generos = table(dr$`Genero `) ` 
+` generos = table(dr$Genero) ` 
 Hace una tabla de frecuencias a partir de las personas que respondieron y el genero que marcaron en la encuesta
 
 
@@ -171,5 +176,23 @@ q3 <- bp$stats[4]
 legend("topright", inset=.05, title="Cuartiles", 
        legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
 
- 
+# Grafico que permita analizar genero conformidad y tiempo usando tablas de contingencia
+
+# Crear una tabla de contingencia entre genero, conformidad y tiempo
+tabla_contingencia <- table(dr$`Genero `, dr$`Nivel de conformidad`, dr$`¿Qué tipo transporte usa?`)
+
+# Convertir la tabla de contingencia en un dataframe
+df_contingencia <- as.data.frame.table(tabla_contingencia)
+
+# Renombrar las columnas
+colnames(df_contingencia) <- c("Genero", "Conformidad", "Tipo_Transporte", "Frecuencia")
+
+# Crear el grafico de barras
+ggplot(df_contingencia, aes(x = Genero, fill = Conformidad)) +
+  geom_bar(position = "fill") +
+  facet_wrap(~ Tipo_Transporte) +
+  labs(
+    x = "Genero",
+    y = "Proporcion",
+    fill = "Conformidad")
 ```
