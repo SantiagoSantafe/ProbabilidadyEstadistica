@@ -180,28 +180,16 @@ q3 <- bp$stats[4]
 legend("topright", inset=.05, title="Cuartiles", 
        legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
 
-# Gráfico que permita analizar género, conformidad y tiempo usando tablas de contingencia
+# Generar una tabla de contingencia para analizar la relación entre género y conformidad según el tiempo
+tabla_contingencia <- table(dr$`Genero `, dr$`Nivel de conformidad`, cut(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`), breaks = 5))
 
-# Crear una tabla de contingencia entre genero, conformidad y tiempo
-tabla_contingencia <- table(dr$`Genero `, dr$`Nivel de conformidad`, dr$`¿Qué tipo transporte usa?`)
-View(tabla_contingencia)
-
-# Convertir la tabla de contingencia en un dataframe
-df_contingencia <- as.data.frame.table(tabla_contingencia)
-
-# Renombrar las columnas
-colnames(df_contingencia) <- c("Genero", "Conformidad", "Tipo_Transporte", "Frecuencia")
-
-# Crear el grafico de barras
-ggplot(df_contingencia, aes(x = Genero, fill = Conformidad)) +
-  geom_bar(position = "dodge") +
-  facet_wrap(~ Tipo_Transporte) +
-  labs(
-    x = "Genero",
-    y = "Proporcion",
-    fill = "Conformidad") +
-  theme_minimal() +
-  ylim(0, max(df_contingencia$Frecuencia))
+# Crear un gráfico de barras apiladas para cada nivel de tiempo
+for (i in 1:dim(tabla_contingencia)[3]) {
+  barplot(tabla_contingencia[,,i], beside = TRUE, legend.text = TRUE, 
+          main = paste("Relación entre Género, Conformidad y Tiempo (minutos) (", dimnames(tabla_contingencia)[[3]][i], ")"), 
+          xlab = "Nivel de Conformidad", ylab = "Frecuencia",
+          col = c("pink", "lightblue"))
+}
 
 # Boxplot para analizar tiempo 
 bp <- boxplot(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`),
