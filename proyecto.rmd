@@ -27,8 +27,8 @@ Marco Teórico
 La movilidad urbana es un tema social y gubernamental que se ve afectada por factores como la economía, la salud pública, la política, el medio ambiente, la demografía, entre otros. Por lo que permite investigar cómo diferentes factores prevalecen en el momento de decidir el medio de transporte a usar y las percepciones que se tienen del mismo.
 Según un artículo emitido por la Universidad de los Andes, las mujeres tienden a valorar la seguridad y accesibilidad en sus desplazamientos, mientras que para los hombres prevalece que los medios de transporte sean más rápidos y, de preferencia, deportivos. Así mismo, hay otros componentes, bien sea por necesidades o gustos, que determinan la preferencia y satisfacción percibida.
 En cuanto a la ciudad de Bogotá, es una capital destacada como metrópolis que a pesar de que cuenta con diversos sistemas y medios de transporte, desde caminar o ir en bicicleta hasta sistemas de transporte masivo como Transmilenio, sostiene desafíos de movilidad muy grandes, congestión vial, calidad de servicio, accesibilidad, contaminación, etc. (Universidad El Bosque, s.f.). Lo que hace interesante entender como se desarrolla la sociedad en este ambiente y su perspectiva al respecto, además si existen diferencias significativas entre a las respuestas obtenidas.
-Para ello, se llevó a cabo una encuesta en Forms* a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables*.
-Los resultados de este estudio proporcionarán información para….
+Para ello, se llevó a cabo una encuesta en Forms a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables.
+Los resultados de este estudio proporcionarán información para llevar a cabo los objetivos propuestos.
 
 
 ## Variables
