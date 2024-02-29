@@ -67,6 +67,14 @@ barplot(table(dr$`Genero `,dr$`¿Qué tipo transporte usa?`),beside=TRUE,legend
 
 barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE, col=c("pink", "lightblue"),main = "Conformidad por medio de transporte",xlab = "Genero", ylab="Conformidad")
 
-
+# Conformidad por tipo de transporte y genero
+ggplot(dr, aes(x = ¿Qué tipo transporte usa?, fill = `Genero `)) +
+  geom_bar(position = "dodge") +
+  facet_wrap(~ Nivel de conformidad) +
+  labs(
+       x = "Tipo de Transporte",
+       y = "Frecuencia") +
+  scale_fill_manual(values = c("pink", "blue")) +
+  theme_minimal()
  
 ```
