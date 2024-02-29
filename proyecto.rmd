@@ -175,6 +175,26 @@ ggplot(df_frecuencia, aes(x = "", y = Frecuencia, fill = Transporte_Ideal)) +
   theme_minimal() +
   theme(legend.position = "bottom")
 
+# Calcular la frecuencia de cada medio de transporte usado
+
+frec_tusado <- table(dr$`¿Qué medio de transporte usa?`)
+
+# Convertir la tabla en un dataframe
+df_frencia <- as.data.frame(frec_tusado)
+
+# Renombrar las columnas
+colnames(df_frencia) <- c("Transporte_usado", "Frecuencia")
+
+# Crear el gráfico de torta Transporte usado
+ggplot(df_frencia, aes(x = "", y = Frecuencia, fill = Transporte_usado))+
+  geom_bar(stat = "identity") +
+  coord_polar("y", start = 0) +
+  labs(title = "Distribución del Medio de Transporte Utilizado",
+       fill = "Medio de Transporte Utilizado") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+
 # Boxplot para analizar gastos promedios de dinero
 bp <- boxplot(as.numeric(dr$`En promedio cuánto dinero gasta a diario, en transporte`), 
   main="Cajas y Bigotes de gastos", 
