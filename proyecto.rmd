@@ -35,7 +35,7 @@ En cuanto a la ciudad de Bogotá, es una capital destacada como metrópolis que 
 Para ello, se llevó a cabo una encuesta en Forms a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables.
 Los resultados de este estudio proporcionarán información para llevar a cabo los objetivos propuestos.
 
-##Tablas de frecuencias cruzadas o de contingencia
+## Tablas de frecuencias cruzadas o de contingencia
 Las tablas de frecuencia cruzada o de contingencia, son estructuras utilizadas en estadística para organizar y resumir datos categóricos en términos de frecuencias de ocurrencia. Estas tablas constan de filas y columnas que representa las diferentes categóricas de dos o más variables. Las tablas de contingencia proporcionan una forma sistemática y visualmente comprensible de examinar la distribución conjunta de las categorías y detectar posibles patrones o tendencias en los datos.
 Para crear tabla de frecuencia cruzada
 
@@ -198,4 +198,22 @@ ggplot(df_contingencia, aes(x = Genero, fill = Conformidad)) +
     fill = "Conformidad") +
   theme_minimal() +
   ylim(0, max(df_contingencia$Frecuencia))
+
+# Boxplot para analizar tiempo 
+bp <- boxplot(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`),
+  main = "Cajas y Bigotes de tiempo",
+  xlab = "Tiempo",
+  horizontal = T)
+
+# Mostrar los valores de q1, q2 y q3
+q1 <- bp$stats[2]
+q2 <- bp$stats[3]
+q3 <- bp$stats[4]
+
+# Agregar las etiquetas al gráfico
+legend("topright", inset=.05, title="Cuartiles", 
+       legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
+
+#Realizar una tabla de datos agrupados para analizar el tiempo con respecto al nivel de conformidad
+
 ```
