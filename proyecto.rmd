@@ -88,13 +88,13 @@ https://www.questionpro.com/blog/es/que-es-una-tabla-de-contingencia/
 ``` {r} 
  library(readxl)
  library(ggplot2)
+  library(dplyr)
+library(knitr)
  dr = read_excel("ENCUESTA MOVILIDAD(1-154) (1).xlsx")
- dr
+ kable(dr)
  #Borrar las columnas innecesarias generadas por Microsoft Forms
  dr = dr[, -c(1)]
  generos = table(dr$`Genero `)
- 
- 
  proporciones_Genero = prop.table(generos)
  
  # Crear un gráfico de torta para mostrar la proporción en genero
@@ -104,7 +104,11 @@ https://www.questionpro.com/blog/es/que-es-una-tabla-de-contingencia/
 
 
 relacionMedioTrans_Genero = table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`)
-tabla_RelacionMedioTrans=table(prop.table(relacionMedioTrans_Genero))
+tabla_RelacionMedioTrans = as.data.frame(prop.table(relacionMedioTrans_Genero))
+colnames(tabla_RelacionMedioTrans) <- c("Genero", "Tipo de transporte", "Porcentaje")
+tabla_RelacionMedioTrans$Porcentaje <- round(tabla_RelacionMedioTrans$Porcentaje * 100, 2)
+#Mostrar la grafica que muestre porcentajes entre medio de transporte y genero
+kable(tabla_RelacionMedioTrans)
 prop_relacionMedioTrans_Genero = prop.table(relacionMedioTrans_Genero)
 
 barplot(prop_relacionMedioTrans_Genero, beside = TRUE, legend.text = TRUE, main = "Proporciones de Tipo de Medio de Transporte por Género", xlab = "Género", ylab = "Proporción")
@@ -214,6 +218,29 @@ q3 <- bp$stats[4]
 legend("topright", inset=.05, title="Cuartiles", 
        legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
 
-#Realizar una tabla de datos agrupados para analizar el tiempo con respecto al nivel de conformidad
+#Realizar una tabla de datos agrupados para analizar el nivel de conformidad con respecto al tiempo
+# Calcular el número de intervalos (k)
+n <- length(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`))
+k <- ceiling(sqrt(n))
+
+# Calcular el rango de los datos
+rango <- max(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`)) - min(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`))
+
+# Calcular el ancho de cada intervalo
+ancho_intervalo <- ceiling(rango / k)
+
+# Calcular los límites de cada intervalo
+limites <- seq(min(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`)), max(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`)), by = ancho_intervalo)
+
+# Crear una columna en el dataframe para asignar el intervalo correspondiente a cada dato
+dr$Intervalo <- cut(as.numeric(dr$`Tiempo que tarda en 1 recorrido (Minutos)`), breaks = limites, include.lowest = TRUE)
+
+# Agrupar los datos por intervalo
+df_grouped <- group_by(dr, Intervalo)
+
+df_summary <- summarise(df_grouped, Promedio_Conformidad = format(mean(as.numeric(`Nivel de conformidad`)), digits = 3))
+
+# Mostrar el resumen de los promedios de conformidad por intervalo de tiempo
+kable(df_summary)
 
 ```
