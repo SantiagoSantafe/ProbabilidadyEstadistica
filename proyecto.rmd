@@ -12,7 +12,7 @@ El presente informe proporciona información de la correlación entre el género
 Se proporcionará un reporte detallado a lo largo de este informe de los datos obtenidos, los examinaremos y explicaremos las implicaciones de los datos obtenidos.
 
 
-## Objetivos
+## Objetivo General
 Investigar y analizar la correlación y repercusiones entre el genero y la preferencia del transporte público y la conformidad con este. A través de una encuesta diseñada específicamente para este propósito, buscamos comprender como los géneros lo perciben.
 
 Objetivos específicos
@@ -35,7 +35,7 @@ En cuanto a la ciudad de Bogotá, es una capital destacada como metrópolis que 
 Para ello, se llevó a cabo una encuesta en Forms a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables.
 Los resultados de este estudio proporcionarán información para llevar a cabo los objetivos propuestos.
 
-#Tablas de frecuencias cruzadas o de contingencia
+##Tablas de frecuencias cruzadas o de contingencia
 Las tablas de frecuencia cruzada o de contingencia, son estructuras utilizadas en estadística para organizar y resumir datos categóricos en términos de frecuencias de ocurrencia. Estas tablas constan de filas y columnas que representa las diferentes categóricas de dos o más variables. Las tablas de contingencia proporcionan una forma sistemática y visualmente comprensible de examinar la distribución conjunta de las categorías y detectar posibles patrones o tendencias en los datos.
 
 ## Variables
