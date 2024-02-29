@@ -7,16 +7,20 @@ output: rmdformats::downcute
 
 
 ## Introducción
-Esta es la parte de Caren
+El transporte tiene un papel crucial en la vida diaria de cada persona además que es fundamental en ciudades y comunidades. Un factor primordial es la accesibilidad, la comodidad y la eficiencia del transporte ya que pueden tener un impacto significativo en los individuos. Teniendo en cuenta esto, es importante comprender cómo diferentes grupos demográficos, incluido el género, experimentan y se relacionan con los sistemas de transporte.
+El presente informe proporciona información de la correlación entre el género, el uso y la conformidad que se tienen con el transporte. Por medio de una meticulosa toma de datos buscamos analizar las percepciones y preferencias de hombres y mujeres frente al transporte teniendo en cuenta su día a día.
+Se proporcionará un reporte detallado a lo largo de este informe de los datos obtenidos, los examinaremos y explicaremos las implicaciones de los datos obtenidos.
+
 
 ## Objetivos
-Esta también es la parte de Caren
+Es fundamental comprender como el genero puede influir en percepción de las cosas y situaciones del común, una de ellas es el transporte, los hábitos de uso y la satisfacción en este son esenciales para servicios más eficaces. Existen anécdotas, experiencias y estudios que son evidencia de que el género influye bastante cuando se va a mostrar una perspectiva sobre algo. Para corroborar esto, es necesario realizar una investigación detallada y específica para comprender mejor estos comportamientos.
+
 
 ## Justificación
-Esta también es la parte de Caren
+Investigar y analizar la correlación y repercusiones entre el genero y la preferencia del transporte público y la conformidad con este. A través de una encuesta diseñada específicamente para este propósito, buscamos comprender como los géneros lo perciben.
 
 ## Planteamiento del problema
-La movilidad y los medios de transporte en ciudades tan extensas, agitadas y congestionadas resultan tener un papel crucial en la vida diaria de las personas. Dentro de las características que atañen a estos dos conceptos, movilidad y medios de transporte, se encuentra la comodidad y nivel de satisfacción que perciben los usuarios a lo largo de sus desplazamientos. Este es un punto que no solo afecta el bienestar instantáneo de las personas, sino que tiene repercusiones en la efectividad y productividad de las actividades que realizan. Por ello, se considera pertinente analizar cómo diferentes variables, tales como género, edad, recursos económicos y tiempo, influyen en la elección y percepción de los medios de transporte empleados en los entornos urbanos.
+La movilidad y los medios de transporte en ciudades tan extensas, agitadas y congestionadas resultan tener un papel crucial en la vida diaria de las personas. Dentro de las características que atañen a estos dos conceptos, movilidad y medios de transporte, se encuentra la comodidad y nivel de satisfacción que perciben los usuarios a lo largo de sus desplazamientos. Este es un punto que no solo afecta el bienestar instantáneo de las personas, sino que tiene repercusiones en la efectividad y productividad de las actividades que realizan. Por ello, se considera pertinente analizar cómo diferentes variables, tales como género, edad y tiempo usado en un recorrido, influyen en la elección y percepción de los medios de transporte empleados en los entornos urbanos.
 
 Marco Teórico
 
@@ -29,6 +33,12 @@ Los resultados de este estudio proporcionarán información para….
 
 ## Variables
 incluidas junto con su clasificación y su estadística descriptiva (presente las gráficas y resúmenes descriptivos que considere adecuados y que haya elaborado con R : Santiago
+
+` dr = read_excel("ENCUESTA MOVILIDAD(1-154).xlsx") `
+La variable dr lee el excel de los datos recopilados en la encuesta
+
+` generos = table(dr$`Genero `) ` 
+Hace una tabla de frecuencias a partir de las personas que respondieron y el genero que marcaron en la encuesta
 
 
 
@@ -49,16 +59,45 @@ Universidad El Bosque. (s.f.). REVISTAS DE LA UNIVERSIDAD EL BOSQUE. https://rev
  library(readxl)
  library(ggplot2)
  dr = read_excel("ENCUESTA MOVILIDAD(1-154).xlsx")
- View(dr)
+ dr
  #Borrar las columnas innecesarias generadas por Microsoft Forms
  dr = dr[, -c(1)]
  generos = table(dr$`Genero `)
  
+ 
  proporciones_Genero = prop.table(generos)
  
- 
- relacionMedioTrans_Genero=table(dr$`Genero `,dr$`¿Qué tipo transporte usa?`)
- prop.table(relacionMedioTrans_Genero)
+ # Crear un gráfico de torta para mostrar la proporcion en genero
+  etiquetas = paste0(names(proporciones_Genero), ": ", proporciones_Genero * 100, "%")
+  graficaGeneros = pie(proporciones_Genero, col = c("pink", "lightblue"), main = "Proporciones de Género", labels = etiquetas)
+
+
+relacionMedioTrans_Genero = table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`)
+prop.table(relacionMedioTrans_Genero)
+prop_relacionMedioTrans_Genero = prop.table(relacionMedioTrans_Genero)
+
+barplot(prop_relacionMedioTrans_Genero, beside = TRUE, legend.text = TRUE, main = "Proporciones de Medio de Transporte por Género", xlab = "Género", ylab = "Proporción")
+
+# Calcular la proporción de Medio de Transporte por Género
+prop_relacionMedioTrans_Genero = prop.table(table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`))
+
+
+
+
+
+
+
+
+# Relación entre medio de transporte y género
+
+ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
+  geom_bar(position = "dodge") +
+  labs(
+    x = "Tipo de Transporte",
+    y = "Frecuencia") +
+  scale_fill_manual(values = c("pink", "lightblue")) +
+  theme_minimal()
+
  
  #Relacion entre medio de transporte y genero
 
