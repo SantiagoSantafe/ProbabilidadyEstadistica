@@ -98,10 +98,6 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   scale_fill_manual(values = c("pink", "lightblue")) +
   theme_minimal()
 
- 
- #Relacion entre medio de transporte y genero
-
-barplot(table(dr$`Genero `,dr$`¿Qué tipo transporte usa?`),beside=TRUE,legend.text = TRUE, col=c("pink","lightblue"),main="Medio de transporte por genero",xlab="Genero",ylab="Frecuencia")
 
 #Relacion entre nivel de conformidad y tiempo que tarda
 
