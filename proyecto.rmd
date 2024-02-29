@@ -114,7 +114,7 @@ prop_relacionMedioTrans_Genero = prop.table(table(dr$`Genero `, dr$`¿Qué tipo
 
 
 
-# Relación entre medio de transporte y género
+# Relación entre tipo de medio de transporte y género
 
 ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   geom_bar(position = "dodge") +
@@ -125,9 +125,9 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   theme_minimal()
 
 
-#Relacion entre nivel de conformidad y género
+#Relacion entre nivel de conformidad y tipo de medio de transporte
 
-barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Genero", ylab="Conformidad")
+barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Tipo de medio de transporte", ylab="Conformidad")
 
 
 
