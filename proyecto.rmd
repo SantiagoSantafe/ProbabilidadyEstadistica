@@ -27,7 +27,7 @@ Es fundamental comprender como el genero puede influir en percepción de las cos
 ## Planteamiento del problema
 La movilidad y los medios de transporte en ciudades tan extensas, agitadas y congestionadas resultan tener un papel crucial en la vida diaria de las personas. Dentro de las características que atañen a estos dos conceptos, movilidad y medios de transporte, se encuentra la comodidad y nivel de satisfacción que perciben los usuarios a lo largo de sus desplazamientos. Este es un punto que no solo afecta el bienestar instantáneo de las personas, sino que tiene repercusiones en la efectividad y productividad de las actividades que realizan. Por ello, se considera pertinente analizar cómo diferentes variables, tales como género, edad y tiempo usado en un recorrido, influyen en la elección y percepción de los medios de transporte empleados en los entornos urbanos.
 
-Marco Teórico
+## Marco Teórico
 
 La movilidad urbana es un tema social y gubernamental que se ve afectada por factores como la economía, la salud pública, la política, el medio ambiente, la demografía, entre otros. Por lo que permite investigar cómo diferentes factores prevalecen en el momento de decidir el medio de transporte a usar y las percepciones que se tienen del mismo.
 Según un artículo emitido por la Universidad de los Andes, las mujeres tienden a valorar la seguridad y accesibilidad en sus desplazamientos, mientras que para los hombres prevalece que los medios de transporte sean más rápidos y, de preferencia, deportivos. Así mismo, hay otros componentes, bien sea por necesidades o gustos, que determinan la preferencia y satisfacción percibida.
@@ -148,5 +148,21 @@ ggplot(df_frecuencia, aes(x = "", y = Frecuencia, fill = Transporte_Ideal)) +
        fill = "Tipo de Transporte Ideal") +
   theme_minimal() +
   theme(legend.position = "bottom")
+
+# Boxplot para analizar gastos promedios de dinero
+bp <- boxplot(as.numeric(dr$`En promedio cuánto dinero gasta a diario, en transporte`), 
+  main="Cajas y Bigotes de gastos", 
+  xlab="Gastos", 
+  horizontal=TRUE)
+
+# Mostrar los valores de q1, q2 y q3
+q1 <- bp$stats[2]
+q2 <- bp$stats[3]
+q3 <- bp$stats[4]
+
+# Agregar las etiquetas al gráfico
+legend("topright", inset=.05, title="Cuartiles", 
+       legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
+
  
 ```
