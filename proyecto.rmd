@@ -7,7 +7,7 @@ output: rmdformats::downcute
 
 
 ## Introducción
-El transporte tiene un papel crucial en la vida diaria de cada persona además que es fundamental en ciudades y comunidades. Un factor primordial es la accesibilidad, la comodidad y la eficiencia del transporte ya que pueden tener un impacto significativo en los individuos. Teniendo en cuenta esto, es importante comprender cómo diferentes grupos demográficos, incluido el género, experimentan y se relacionan con los sistemas de transporte.
+El transporte tiene un papel crucial en la vida diaria de cada persona además que es fundamental en ciudades y comunidades. Un factor primordial es la accesibilidad, la comodidad y la eficiencia del transporte ya que pueden tener un impacto significativo en los individuos. Teniendo en cuenta esto, es importante comprender cómo diferentes grupos demográficos, incluído el género, experimentan y se relacionan con los sistemas de transporte.
 El presente informe proporciona información de la correlación entre el género, el uso y la conformidad que se tienen con el transporte. Por medio de una meticulosa toma de datos buscamos analizar las percepciones y preferencias de hombres y mujeres frente al transporte teniendo en cuenta su día a día.
 Se proporcionará un reporte detallado a lo largo de este informe de los datos obtenidos, los examinaremos y explicaremos las implicaciones de los datos obtenidos.
 
@@ -97,7 +97,7 @@ https://www.questionpro.com/blog/es/que-es-una-tabla-de-contingencia/
  
  proporciones_Genero = prop.table(generos)
  
- # Crear un gráfico de torta para mostrar la proporcion en genero
+ # Crear un gráfico de torta para mostrar la proporción en genero
   proporciones_Genero=round(proporciones_Genero, 2)
   etiquetas = paste0(names(proporciones_Genero), ": ", proporciones_Genero * 100, "%")
   graficaGeneros = pie(proporciones_Genero, col = c("pink", "lightblue"), main = "Proporciones de Género", labels = etiquetas)
@@ -107,9 +107,9 @@ relacionMedioTrans_Genero = table(dr$`Genero `, dr$`¿Qué tipo transporte usa?
 tabla_RelacionMedioTrans=table(prop.table(relacionMedioTrans_Genero))
 prop_relacionMedioTrans_Genero = prop.table(relacionMedioTrans_Genero)
 
-barplot(prop_relacionMedioTrans_Genero, beside = TRUE, legend.text = TRUE, main = "Proporciones de Medio de Transporte por Género", xlab = "Género", ylab = "Proporción")
+barplot(prop_relacionMedioTrans_Genero, beside = TRUE, legend.text = TRUE, main = "Proporciones de Tipo de Medio de Transporte por Género", xlab = "Género", ylab = "Proporción")
 
-# Calcular la proporción de Medio de Transporte por Género
+# Calcular la proporción de Tipo de Medio de Transporte por Género
 prop_relacionMedioTrans_Genero = prop.table(table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`))
 
 
@@ -127,11 +127,11 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
 
 #Relacion entre nivel de conformidad y tiempo que tarda
 
-barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por medio de transporte",xlab = "Genero", ylab="Conformidad")
+barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Genero", ylab="Conformidad")
 
 
 
-# Conformidad por tipo de transporte y genero
+# Conformidad por tipo de transporte y género
 ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   geom_bar(position = "dodge") +
   facet_wrap(~ `Nivel de conformidad`) +
@@ -142,7 +142,7 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   theme_minimal()
 
 
-# Contar la frecuencia de cada tipo de transporte ideal
+# Calcular la frecuencia de cada tipo de transporte ideal
 
 frecuencia_transporte_ideal <- table(dr$`Medio transporte ideal. ¿Por qué?`)
 
@@ -176,7 +176,7 @@ q3 <- bp$stats[4]
 legend("topright", inset=.05, title="Cuartiles", 
        legend=paste("Q1: ", round(q1, 2), "\nQ2: ", round(q2, 2), "\nQ3: ", round(q3, 2)), cex=1)
 
-# Grafico que permita analizar genero conformidad y tiempo usando tablas de contingencia
+# Gráfico que permita analizar género, conformidad y tiempo usando tablas de contingencia
 
 # Crear una tabla de contingencia entre genero, conformidad y tiempo
 tabla_contingencia <- table(dr$`Genero `, dr$`Nivel de conformidad`, dr$`¿Qué tipo transporte usa?`)
