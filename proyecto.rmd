@@ -12,7 +12,7 @@ El presente informe proporciona información de la correlación entre el género
 Se proporcionará un reporte detallado a lo largo de este informe de los datos obtenidos, los examinaremos y explicaremos las implicaciones de los datos obtenidos.
 
 
-## Objetivos
+## Objetivo General
 Investigar y analizar la correlación y repercusiones entre el genero y la preferencia del transporte público y la conformidad con este. A través de una encuesta diseñada específicamente para este propósito, buscamos comprender como los géneros lo perciben.
 
 Objetivos específicos
@@ -35,6 +35,8 @@ En cuanto a la ciudad de Bogotá, es una capital destacada como metrópolis que 
 Para ello, se llevó a cabo una encuesta en Forms a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables.
 Los resultados de este estudio proporcionarán información para llevar a cabo los objetivos propuestos.
 
+##Tablas de frecuencias cruzadas o de contingencia
+Las tablas de frecuencia cruzada o de contingencia, son estructuras utilizadas en estadística para organizar y resumir datos categóricos en términos de frecuencias de ocurrencia. Estas tablas constan de filas y columnas que representa las diferentes categóricas de dos o más variables. Las tablas de contingencia proporcionan una forma sistemática y visualmente comprensible de examinar la distribución conjunta de las categorías y detectar posibles patrones o tendencias en los datos.
 
 ## Variables
 incluidas junto con su clasificación y su estadística descriptiva (presente las gráficas y resúmenes descriptivos que considere adecuados y que haya elaborado con R : Santiago
@@ -70,6 +72,11 @@ Universidad de los Andes. (2023, 11 de julio). Movilidad de género: calidad de 
 Universidad El Bosque. (s.f.). REVISTAS DE LA UNIVERSIDAD EL BOSQUE. https://revistas.unbosque.edu.co/index.php/RevTec/article/view/769/366
 
 Las mujeres y el transporte en Bogotá: las cuentas. (2020). En Despacio.org. https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://despacio.org/portfolio/las-mujeres-y-el-transporte-en-bogota-las-cuentas/&ved=2ahUKEwjU-fGy1NCEAxVeHEQIHRO1A3kQFnoECB4QAQ&usg=AOvVaw2-3dfIVISG5OvFBjvbgmQU
+
+https://www.ibm.com/docs/es/spss-statistics/saas?topic=tutorial-crosstabulation-tables#:~:text=Las%20tablas%20cruzadas%20(tablas%20de,una%20combinaci%C3%B3n%20exclusiva%20de%20valores
+
+https://www.questionpro.com/blog/es/que-es-una-tabla-de-contingencia/
+
 
 ## Anexos
 ### Codigo Usado en R
