@@ -25,7 +25,7 @@ Objetivos específicos
 Es fundamental comprender como el genero puede influir en percepción de las cosas y situaciones del común, una de ellas es el transporte, los hábitos de uso y la satisfacción en este son esenciales para servicios más eficaces. Existen anécdotas, experiencias y estudios que son evidencia de que el género influye bastante cuando se va a mostrar una perspectiva sobre algo. Para corroborar esto, es necesario realizar una investigación detallada y específica para comprender mejor estos comportamientos.
 
 ## Planteamiento del problema
-La movilidad y los medios de transporte en ciudades tan extensas, agitadas y congestionadas resultan tener un papel crucial en la vida diaria de las personas. Dentro de las características que atañen a estos dos conceptos, movilidad y medios de transporte, se encuentra la comodidad y nivel de satisfacción que perciben los usuarios a lo largo de sus desplazamientos. Este es un punto que no solo afecta el bienestar instantáneo de las personas, sino que tiene repercusiones en la efectividad y productividad de las actividades que realizan. Por ello, se considera pertinente analizar cómo diferentes variables, tales como género, edad y tiempo usado en un recorrido, influyen en la elección y percepción de los medios de transporte empleados en los entornos urbanos.
+La movilidad y los medios de transporte en ciudades tan extensas, agitadas y congestionadas resultan tener un papel crucial en la vida diaria de las personas. Dentro de las características que atañen a estos dos conceptos, movilidad y medios de transporte, se encuentra la comodidad y nivel de satisfacción que perciben los usuarios a lo largo de sus desplazamientos. Este es un punto que no solo afecta el bienestar instantáneo de las personas, sino que tiene repercusiones en la efectividad y productividad de las actividades que realizan. Por ello, se considera pertinente analizar cómo diferentes variables, tales como género y el tiempo usado en un recorrido, influyen en la elección y percepción de los medios de transporte empleados en los entornos urbanos.
 
 ## Marco Teórico
 
@@ -91,7 +91,7 @@ https://www.questionpro.com/blog/es/que-es-una-tabla-de-contingencia/
   library(dplyr)
 library(knitr)
  dr = read_excel("ENCUESTA MOVILIDAD(1-154) (1).xlsx")
- kable(dr)
+ kable(head(dr))
  #Borrar las columnas innecesarias generadas por Microsoft Forms
  dr = dr[, -c(1)]
  generos = table(dr$`Genero `)
@@ -143,7 +143,7 @@ ggplot(df_conti, aes(x = Conformidad, y = Frecuencia, fill = Conformidad)) +
 
 #Relacion entre nivel de conformidad y tipo de medio de transporte
 
-barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Tipo de medio de transporte", ylab="Conformidad")
+barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por tipo de medio de transporte",xlab = "Tipo de medio de transporte", ylab="Frecuencia")
 
 
 # Calcular la frecuencia de cada tipo de transporte ideal
