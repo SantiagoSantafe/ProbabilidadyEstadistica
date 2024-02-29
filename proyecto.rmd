@@ -86,23 +86,19 @@ Las mujeres y el transporte en Bogotá: las cuentas. (2020). En Despacio.org. ht
  proporciones_Genero = prop.table(generos)
  
  # Crear un gráfico de torta para mostrar la proporcion en genero
+  proporciones_Genero=round(proporciones_Genero, 2)
   etiquetas = paste0(names(proporciones_Genero), ": ", proporciones_Genero * 100, "%")
   graficaGeneros = pie(proporciones_Genero, col = c("pink", "lightblue"), main = "Proporciones de Género", labels = etiquetas)
 
 
 relacionMedioTrans_Genero = table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`)
-prop.table(relacionMedioTrans_Genero)
+tabla_RelacionMedioTrans=table(prop.table(relacionMedioTrans_Genero))
 prop_relacionMedioTrans_Genero = prop.table(relacionMedioTrans_Genero)
 
 barplot(prop_relacionMedioTrans_Genero, beside = TRUE, legend.text = TRUE, main = "Proporciones de Medio de Transporte por Género", xlab = "Género", ylab = "Proporción")
 
 # Calcular la proporción de Medio de Transporte por Género
 prop_relacionMedioTrans_Genero = prop.table(table(dr$`Genero `, dr$`¿Qué tipo transporte usa?`))
-
-
-
-
-
 
 
 
