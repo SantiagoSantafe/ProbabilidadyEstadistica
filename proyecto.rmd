@@ -63,7 +63,7 @@ Universidad El Bosque. (s.f.). REVISTAS DE LA UNIVERSIDAD EL BOSQUE. https://rev
 ``` {r} 
  library(readxl)
  library(ggplot2)
- dr = read_excel("ENCUESTA MOVILIDAD(1-154).xlsx")
+ dr = read_excel("ENCUESTA MOVILIDAD(1-154) (1).xlsx")
  dr
  #Borrar las columnas innecesarias generadas por Microsoft Forms
  dr = dr[, -c(1)]
