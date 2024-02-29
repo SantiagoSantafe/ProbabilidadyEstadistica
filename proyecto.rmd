@@ -119,14 +119,24 @@ prop_relacionMedioTrans_Genero = prop.table(table(dr$`Genero `, dr$`¿Qué tipo
 
 
 # Relación entre tipo de medio de transporte y género
+# Convertir la tabla de contingencia en un dataframe
+df_contingencia <- as.data.frame.table(tabla_contingencia)
 
-ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
-  geom_bar(position = "dodge") +
+# Renombrar las columnas
+colnames(df_contingencia) <- c("Genero", "Conformidad", "Tipo_Transporte", "Frecuencia")
+
+# Crear el gráfico de barras con la frecuencia de conformidad
+ggplot(df_contingencia, aes(x = Conformidad, y = Frecuencia, fill = Conformidad)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_grid(Genero ~ Tipo_Transporte) +
   labs(
-    x = "Tipo de Transporte",
-    y = "Frecuencia") +
-  scale_fill_manual(values = c("pink", "lightblue")) +
+    x = "Conformidad",
+    y = "Frecuencia",
+    fill = "Conformidad",
+    title = "Frecuencia de conformidad por género y tipo de transporte") +
   theme_minimal()
+
+
 
 
 #Relacion entre nivel de conformidad y tipo de medio de transporte
