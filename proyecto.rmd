@@ -32,8 +32,8 @@ Marco Teórico
 La movilidad urbana es un tema social y gubernamental que se ve afectada por factores como la economía, la salud pública, la política, el medio ambiente, la demografía, entre otros. Por lo que permite investigar cómo diferentes factores prevalecen en el momento de decidir el medio de transporte a usar y las percepciones que se tienen del mismo.
 Según un artículo emitido por la Universidad de los Andes, las mujeres tienden a valorar la seguridad y accesibilidad en sus desplazamientos, mientras que para los hombres prevalece que los medios de transporte sean más rápidos y, de preferencia, deportivos. Así mismo, hay otros componentes, bien sea por necesidades o gustos, que determinan la preferencia y satisfacción percibida.
 En cuanto a la ciudad de Bogotá, es una capital destacada como metrópolis que a pesar de que cuenta con diversos sistemas y medios de transporte, desde caminar o ir en bicicleta hasta sistemas de transporte masivo como Transmilenio, sostiene desafíos de movilidad muy grandes, congestión vial, calidad de servicio, accesibilidad, contaminación, etc. (Universidad El Bosque, s.f.). Lo que hace interesante entender como se desarrolla la sociedad en este ambiente y su perspectiva al respecto, además si existen diferencias significativas entre a las respuestas obtenidas.
-Para ello, se llevó a cabo una encuesta en Forms* a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables*.
-Los resultados de este estudio proporcionarán información para….
+Para ello, se llevó a cabo una encuesta en Forms a una muestra de 153 personas residentes en la ciudad de Bogotá con el fin de analizar las relaciones entre las diferentes variables.
+Los resultados de este estudio proporcionarán información para llevar a cabo los objetivos propuestos.
 
 
 ## Variables
@@ -48,7 +48,15 @@ Hace una tabla de frecuencias a partir de las personas que respondieron y el gen
 
 
 ## Resultados
-Juan
+
+El análisis de la proporción del medio de transporte por género en la encuesta revela disparidades significativas. Mientras que en el transporte privado se observa una distribución equitativa entre hombres y mujeres, con una cantidad similar haciendo uso de este medio, en cambio, en el transporte público, se evidencia una predominancia considerable de mujeres que usan este servicio en comparación con los hombres encuestados
+Además, se destaca una marcada disparidad en los niveles de satisfacción entre los usuarios de transporte privado y público. Donde alrededor del 80% de los usuarios de transporte privado expresan estar entre completamente satisfechos o muy satisfechos con su tipo de transporte actual, en contraste con apenas el 32% de los usuarios de transporte público que reportan un nivel similar de satisfacción. Si profundizamos en el análisis de la satisfacción del sistema de transporte según el género y tipo de transporte, se observa que el 100% de los encuestados que manifestaron estar completamente satisfechos el servicio de transporte público son hombres. Además, se resalta que, en general, las mujeres muestran niveles de satisfacción menores frente a la contraparte masculina, tanto entre las usuarias del sistema de transporte público como entre aquellas que se movilizan en un vehículo particular.
+
+El hecho de que las mujeres muestren niveles de satisfacción más bajos con el transporte público, a pesar de ser las principales usuarias de este servicio, puede tener una serie de efectos negativos en su vida cotidiana. Esta insatisfacción puede afectar su autonomía y calidad de vida. Además, el estrés y la ansiedad asociados con el uso del transporte público pueden tener un impacto negativo en su salud y bienestar emocional. Esta situación también contribuye a la perpetuación de desigualdades de género en la ciudad, ya que las mujeres pueden enfrentar barreras adicionales para participar plenamente en la vida urbana.
+
+Por otra parte, es interesante notar que el metro es la opción ideal para la mayoría de los encuestados solo después del Carro particular, con un 21% frente a un 40%. Este interés en esta forma de transporte público  señala una posible alternativa para mejorar la movilidad en Bogotá. Sin embargo, es fundamental tener en cuenta que, para que el metro sea una opción verdaderamente efectiva, se debe considerar las necesidades y preocupaciones específicas de todos los grupos demográficos al planificar e implementar infraestructuras de transporte público en la ciudad.
+
+
 
 ## Conclusiones
 Juan
@@ -63,7 +71,7 @@ Universidad El Bosque. (s.f.). REVISTAS DE LA UNIVERSIDAD EL BOSQUE. https://rev
 ``` {r} 
  library(readxl)
  library(ggplot2)
- dr = read_excel("ENCUESTA MOVILIDAD(1-154).xlsx")
+ dr = read_excel("ENCUESTA MOVILIDAD(1-154) (1).xlsx")
  dr
  #Borrar las columnas innecesarias generadas por Microsoft Forms
  dr = dr[, -c(1)]
