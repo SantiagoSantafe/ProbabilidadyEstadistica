@@ -180,6 +180,7 @@ legend("topright", inset=.05, title="Cuartiles",
 
 # Crear una tabla de contingencia entre genero, conformidad y tiempo
 tabla_contingencia <- table(dr$`Genero `, dr$`Nivel de conformidad`, dr$`¿Qué tipo transporte usa?`)
+View(tabla_contingencia)
 
 # Convertir la tabla de contingencia en un dataframe
 df_contingencia <- as.data.frame.table(tabla_contingencia)
@@ -189,10 +190,12 @@ colnames(df_contingencia) <- c("Genero", "Conformidad", "Tipo_Transporte", "Frec
 
 # Crear el grafico de barras
 ggplot(df_contingencia, aes(x = Genero, fill = Conformidad)) +
-  geom_bar(position = "fill") +
+  geom_bar(position = "dodge") +
   facet_wrap(~ Tipo_Transporte) +
   labs(
     x = "Genero",
     y = "Proporcion",
-    fill = "Conformidad")
+    fill = "Conformidad") +
+  theme_minimal() +
+  ylim(0, max(df_contingencia$Frecuencia))
 ```
