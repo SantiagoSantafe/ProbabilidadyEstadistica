@@ -103,14 +103,36 @@ ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
 
 barplot(table(dr$'Nivel de conformidad',dr$'¿Qué tipo transporte usa?'),beside = TRUE, legend.text = TRUE,main = "Conformidad por medio de transporte",xlab = "Genero", ylab="Conformidad")
 
+
+
 # Conformidad por tipo de transporte y genero
-ggplot(dr, aes(x = '¿Qué tipo transporte usa?', fill = `Genero `)) +
+ggplot(dr, aes(x = `¿Qué tipo transporte usa?`, fill = `Genero `)) +
   geom_bar(position = "dodge") +
-  facet_wrap(~ 'Nivel de conformidad') +
+  facet_wrap(~ `Nivel de conformidad`) +
   labs(
        x = "Tipo de Transporte",
        y = "Frecuencia") +
   scale_fill_manual(values = c("pink", "blue")) +
   theme_minimal()
+
+
+# Contar la frecuencia de cada tipo de transporte ideal
+
+frecuencia_transporte_ideal <- table(dr$`Medio transporte ideal. ¿Por qué?`)
+
+# Convertir la tabla en un dataframe
+df_frecuencia <- as.data.frame(frecuencia_transporte_ideal)
+
+# Renombrar las columnas
+colnames(df_frecuencia) <- c("Transporte_Ideal", "Frecuencia")
+
+# Crear el gráfico de torta
+ggplot(df_frecuencia, aes(x = "", y = Frecuencia, fill = Transporte_Ideal)) +
+  geom_bar(stat = "identity") +
+  coord_polar("y", start = 0) +
+  labs(title = "Distribución del Tipo de Transporte Ideal",
+       fill = "Tipo de Transporte Ideal") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
  
 ```
